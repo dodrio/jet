@@ -1,0 +1,15 @@
+{
+  "name": "jet",
+  "version": "1.0.0",
+  "description": "A proxy like privoxy",
+  "main": "index.js",
+  "dependencies": {
+    "socks": "^1.1.9",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "m31271n",
+  "license": "MIT"
+}
