@@ -10,12 +10,17 @@ const proxy = {
   type: 5,
 };
 
-const socksAgent = new Socks.Agent({ proxy },false, false);
-
 const jet = http.createServer((req, res) => {
-  const _url = url.parse(req.url);
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('okay');
+  console.log(req.url);
+  const options = url.parse(req.url);
+
+  const socksAgent = new Socks.Agent({ proxy },false, false);
+  options.agent = socksAgent;
+  http.get(options, (_res) => {
+    _res.pipe(res);
+  }).on('error', (err) => {
+    console.log(err.message);
+  });
 });
 
 jet.on('connect', (req, cltSocket, head) => {
