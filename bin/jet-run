@@ -23,7 +23,7 @@ jet.listen(port, host, () => {
 
 jet.on('error', (e) => {
   if (e.code === 'EADDRINUSE') {
-    console.log('ERROR: Address in use, stopping...');
+    console.log('ERROR: Address in use, abort.');
     // const jet = require('../lib/jet') will run a process to check configuration file,
     // It need to be exit manually.
     process.exit(1);

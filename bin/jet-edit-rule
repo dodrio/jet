@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const process = require('process');
+const cp = require('child_process');
+const path = require('path');
+
+const program = require('commander');
+const matglass = require('matglass');
+
+let _rule = undefined;
+
+program
+  .arguments('<rule>')
+  .action((rule) => {
+    _rule = rule;
+  })
+  .parse(process.argv);
+
+if (_rule === undefined) {
+  console.log('ERROR: you must specify a rule, abort.');
+} else {
+  const editorArray = process.env.EDITOR.split(' ');
+  const editor = editorArray[0];
+  const args = editorArray.slice(1);
+  const ruleFile = path.join(__dirname, `../rules/${_rule}.list`);
+  matglass.isFile(ruleFile, (err, exist) => {
+    if (err) {
+      console.log(err);
+    } else if (exist) {
+      cp.spawn(editor, args.concat(ruleFile), { stdio: 'inherit' });
+    } else {
+      console.log('ERROR: rule file is not exist, abort.');
+    }
+  });
+}
