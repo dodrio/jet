@@ -1,7 +1,7 @@
 {
   "name": "jet",
   "version": "1.2.2",
-  "description": "An HTTP/HTTPS proxy which integrated with socks.",
+  "description": "An HTTP/HTTPS proxy integrated with socks.",
   "main": "lib/jet",
   "bin": {
     "jet": "bin/jet"
