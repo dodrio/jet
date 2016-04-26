@@ -3,6 +3,22 @@ An HTTP proxy which integrated with socks.
 
 > The name "Jet" is inspired by Jet Black from Cowboy Bepop.
 
+```
+                               ┌─────────────────────────────────────────────┐
+                               │                                             │
+                               │                                             ▼
+                               │                                       ┌───────────┐
+┌──────────────────┐     ┌───────────┐                                 │           │
+│ User Application │────▶│    Jet    │                                 │ Internet  │
+└──────────────────┘     └───────────┘                                 │           │
+                               │                                       └───────────┘
+                               │               ┌──────────────┐              ▲
+                               │               │ Socks Proxy  │              │
+                               └──────────────▶│    (like     │──────────────┘
+                                               │ shadowsocks) │
+                                               └──────────────┘
+```
+
 ## Installation
 
 	npm install -g m31271n/jet
