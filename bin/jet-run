@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const process = require('process');
+const program = require('commander');
+
+const defaultHost = '127.0.0.1';
+const defaultPort = 9527;
+
+program
+  .option('-h, --host <host>', `host address, default value: ${defaultHost}`)
+  .option('-p, --port <port>', `port number, default value: ${defaultPort}`, parseInt)
+  .parse(process.argv);
+
+const jet = require('../lib/jet');
+const host = program.host || '127.0.0.1';
+const port = program.port || 9527;
+
+jet.listen(port, host, () => {
+  console.log(`Jet: listening on ${host}:${port}...`);
+});
+
+jet.on('error', (e) => {
+  if (e.code === 'EADDRINUSE') {
+    console.log('Address in use, try another one...');
+    // const jet = require('../lib/jet') will run a process to check configuration file,
+    // It need to be exit manually.
+    process.exit(1);
+  }
+});

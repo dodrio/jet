@@ -2,12 +2,17 @@
 
 'use strict';
 
-const jet = require('../lib/jet');
+const pkgInfo = require('../package.json');
+const version = pkgInfo.version;
+const description = pkgInfo.description;
 
-// launch jet.
-const address = '127.0.0.1';
-const port = 9527;
+const process = require('process');
+const program = require('commander');
 
-jet.listen(port, address, () => {
-  console.log(`Jet: listening on ${address}:${port}...`);
-});
+program
+  .version(version)
+  .description(description)
+  .command('run', 'run jet')
+  .command('edit-rule [rule]', 'edit jet rule')
+  .command('backup-rule [rule]', 'backup jet rule')
+  .parse(process.argv);
