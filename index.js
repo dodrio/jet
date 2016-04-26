@@ -5,6 +5,7 @@ const url = require('url');
 const net = require('net');
 const Socks = require('socks');
 
+
 // Proxy Setting
 const proxy = {
   ipaddress: '127.0.0.1',
@@ -12,18 +13,32 @@ const proxy = {
   type: 5,
 };
 
+
 // Jet Header
 const jetHeader = 'HTTP/1.1 200 Connection Established\r\n' +
         'Proxy-agent: Jet Proxy\r\n' +
         '\r\n';
 
+// Jet Request Logger
+const colors = require('colors');
+
+function requestLogger(req, tunnelp) {
+  const log = `● ${req.connection.remoteAddress}:${req.method} ${req.url}`;
+
+  if (tunnelp === true) {
+    console.log(log.yellow);
+  } else {
+    console.log(log.green);
+  }
+
+}
+
 // Jet
 const jet = http.createServer();
 
+
 // proxy an HTTP request.
 jet.on('request', (req, res) => {
-  console.log(`● ${req.url}`);
-
   const hostname = req.headers['host'];
   const port = 80;
   const path = url.parse(req.url).path;
@@ -39,7 +54,10 @@ jet.on('request', (req, res) => {
   };
 
   if (true) {
+    requestLogger(req, true);
     options.agent = new Socks.Agent({ proxy },false, false);
+  } else {
+    requestLogger(req);
   }
 
   const jetRequest = http.request(options, (_res) => {
@@ -62,7 +80,7 @@ jet.on('connect', (req, socket, head) => {
   const port = _url.port;
 
   if (true) {
-    console.log(`T - ${_url.href}`);
+    requestLogger(req, true);
 
     Socks.createConnection({
       proxy,
@@ -73,7 +91,7 @@ jet.on('connect', (req, socket, head) => {
       command: 'connect',
     }, (err, jetSocket, info) => {
       if (err) {
-        console.log('Got a error ' + err.message);
+        console.log('Got a error: ' + err.message);
       } else {
         socket.write(jetHeader);
         jetSocket.write(head);
@@ -82,7 +100,8 @@ jet.on('connect', (req, socket, head) => {
       }
     });
   } else {
-    console.log(`P - ${_url.href}`);
+    requestLogger(req);
+
     const jetSocket = net.connect(port, hostname, () => {
       socket.write(jetHeader);
       jetSocket.write(head);
