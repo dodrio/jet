@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "colors": "1.1.2",
+    "commander": "^2.9.0",
+    "matglass": "https://github.com/m31271n/matglass/archive/v0.1.2.tar.gz",
     "socks": "1.1.9"
   },
   "devDependencies": {},
