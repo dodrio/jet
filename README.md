@@ -1,5 +1,5 @@
 # Jet
-An HTTP proxy which integrated with socks.
+An HTTP/HTTPS proxy which integrated with socks.
 
 > The name "Jet" is inspired by Jet Black from Cowboy Bepop.
 
