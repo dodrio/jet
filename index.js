@@ -38,7 +38,9 @@ jet.on('request', (req, res) => {
     headers,
   };
 
-  options.agent = new Socks.Agent({ proxy },false, false);
+  if (true) {
+    options.agent = new Socks.Agent({ proxy },false, false);
+  }
 
   const jetRequest = http.request(options, (_res) => {
     _res.pipe(res);
@@ -54,7 +56,7 @@ jet.on('request', (req, res) => {
 
 
 // proxy an HTTPS requset.
-jet.on('connect', (req, cltSocket, head) => {
+jet.on('connect', (req, socket, head) => {
   const _url = url.parse(`https://${req.url}`);
   const hostname = _url.hostname;
   const port = _url.port;
@@ -73,19 +75,19 @@ jet.on('connect', (req, cltSocket, head) => {
       if (err) {
         console.log('Got a error ' + err.message);
       } else {
-        cltSocket.write(jetHeader);
+        socket.write(jetHeader);
         jetSocket.write(head);
-        jetSocket.pipe(cltSocket);
-        cltSocket.pipe(jetSocket);
+        jetSocket.pipe(socket);
+        socket.pipe(jetSocket);
       }
     });
   } else {
     console.log(`P - ${_url.href}`);
     const jetSocket = net.connect(port, hostname, () => {
-      cltSocket.write(jetHeader);
+      socket.write(jetHeader);
       jetSocket.write(head);
-      jetSocket.pipe(cltSocket);
-      cltSocket.pipe(jetSocket);
+      jetSocket.pipe(socket);
+      socket.pipe(jetSocket);
     });
   }
 });
