@@ -54,3 +54,6 @@ Add above script to your shell init file, like `~/.bashrc` or `~/.zshrc`. Then `
 ## Test the effects
 
     curl --proxy localhost:9527 https://www.google.com/
+
+## LICENSE
+GPL-3.0
