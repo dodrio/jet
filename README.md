@@ -24,7 +24,7 @@ Jet need a socks5 proxy that run at `127.0.0.1:1080`. Shadowsocks is a good choi
 
 	jet backup-rule <path> // backup all the rules to a place (in development)
 
-## Configure OS to use this.
+## Configure OS to use this
 ### For GUI
 I think you know how to set this.
 
