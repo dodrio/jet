@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const jet = require('../lib/jet');
+
+// launch jet.
+const address = '127.0.0.1';
+const port = 9527;
+
+jet.listen(port, address, () => {
+  console.log(`Jet: listening on ${address}:${port}...`);
+});

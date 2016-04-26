@@ -1,15 +1,19 @@
 {
   "name": "jet",
-  "version": "1.0.0",
-  "description": "A proxy like privoxy",
-  "main": "index.js",
+  "version": "1.1.0",
+  "description": "An HTTP proxy which integrated with socks.",
+  "main": "lib/jet",
+  "bin": {
+    "jet": "bin/jet"
+  },
   "dependencies": {
-    "socks": "^1.1.9",
+    "colors": "1.1.2",
+    "socks": "1.1.9"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "m31271n",
-  "license": "MIT"
+  "license": "GPL-3.0"
 }
