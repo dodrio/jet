@@ -66,7 +66,7 @@ shell> jet edit-rule block
 shell> jet edit-rule ip
 ```
 
-## Backup Rule
+## Backup Rule (in development)
 ```
 # backup all the rules to a place
 shell> jet backup-rule <path>
