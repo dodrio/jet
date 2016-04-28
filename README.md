@@ -56,10 +56,12 @@ shell> jet run -h 127.0.0.1 -p 9600
 
 ## Edit Rule
 ```
-# specify which request to be sent via tunnel
-shell> jet edit-rule tunnel 
-# specify which request to be blocked
+# specify which request to be sent via tunnel.
+shell> jet edit-rule tunnel
+
+# specify which request to be blocked.
 shell> jet edit-rule block
+
 # specify which IP is allowed to use this Jet. By default, only 127.0.0.1 is allowed.
 shell> jet edit-rule ip
 ```
@@ -101,14 +103,14 @@ Add above script to your shell init file, like `~/.bashrc` or `~/.zshrc`. Then `
 ## Test The Effects
 ### Test Jet is Working Or Not
 ```
-curl --proxy localhost:9527 https://www.google.com/
+shell> curl --proxy localhost:9527 https://www.google.com/
 ```
 
 If you get right content, then jet is working.
 
 ### Test Your Shell Environment Is Set Properly Or Not
 ```
-curl https://www.google.com/
+shell> curl https://www.google.com/
 ```
 
 If you get right content, then jet is working. And your shell environment is set properly, too.
