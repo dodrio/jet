@@ -4,7 +4,16 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5.
 > The name "Jet" is inspired by Jet Black from Cowboy Bepop.
 
 ## What does Jet do?
-![Theory](misc/theory.png)
+```
+              ┌──────────────────────┐
+              │SOCKS v4/v4a/v5 Proxy │
+          ┌──▶│  (ShadowSocks etc.)  │─┐
+          │   └──────────────────────┘ │
+          │                            ▼
+┌──────────────────┐   ┌──────┐   ┌─────────┐
+│ User Application │──▶│ Jet  │──▶│Internet │
+└──────────────────┘   └──────┘   └─────────┘
+```
 
 ## Installation
 
