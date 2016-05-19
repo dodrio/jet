@@ -1,5 +1,5 @@
 # Jet
-An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5.
+An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.
 
 > The name "Jet" is inspired by Jet Black from Cowboy Bepop.
 
@@ -29,28 +29,11 @@ Now, Jet just support SOCKS v5 proxy that run at `127.0.0.1:1080`. Shadowsocks i
 ## Run Jet
 ```
 # run jet on 127.0.0.1:9527
-shell> jet run 
+shell> jet run
 # run jet on another port, like 9600
-shell> jet run -h 127.0.0.1 -p 9600 
+shell> jet run -h 127.0.0.1 -p 9600
 ```
 
-## Edit Rule
-```
-# specify which request to be sent via tunnel.
-shell> jet edit-rule tunnel
-
-# specify which request to be blocked.
-shell> jet edit-rule block
-
-# specify which IP is allowed to use this Jet. By default, only 127.0.0.1 is allowed.
-shell> jet edit-rule ip
-```
-
-## Backup Rule (in development)
-```
-# backup all the rules to a place
-shell> jet backup-rule <path>
-```
 ## Configure All Your Application To Use Jet.
 ### For GUI
 I think you know how to set this. It's simple.
