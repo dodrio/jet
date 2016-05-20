@@ -18,6 +18,8 @@ program
   .parse(process.argv);
 
 
+logger.info(`Current Version: ${require('../package.json').version}`);
+
 const jet = require('../lib/jet');
 const host = program.host || defaultHost;
 const port = program.port || defaultPort;
