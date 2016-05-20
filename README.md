@@ -15,6 +15,10 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP C
 └──────────────────┘   └──────┘   └─────────┘
 ```
 
+## Requirements
+
+* Node.js > 6.0.0
+
 ## Installation
 
 	npm install -g m31271n/jet
