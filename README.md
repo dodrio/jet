@@ -85,5 +85,8 @@ If you get right content, then jet is working. And your shell environment is set
 ## Last
 You are not alone, we are all fighting for freedom.
 
+## Reference
+* [HTTPS connections over proxy servers](http://stackoverflow.com/questions/516323/https-connections-over-proxy-servers)
+
 ## LICENSE
 GPL-3.0
