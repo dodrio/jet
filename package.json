@@ -12,7 +12,8 @@
     "debug": "^2.2.0",
     "ip": "^1.1.3",
     "matglass": "https://github.com/m31271n/matglass/archive/v0.1.2.tar.gz",
-    "socks": "1.1.9"
+    "socks": "1.1.9",
+    "which": "1.2.9"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

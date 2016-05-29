@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+const process = require('process');
+const program = require('commander');
+
+const which = require('which');
+
+const logger = require('../lib/logger');
+
+
+program
+  .option('-t, --type <type>', `config type, available types: launchd`)
+  .parse(process.argv);
+
+
+const configType = program.type;
+
+if (configType === undefined) {
+  logger.erro(`Invalid config type. Abort.`);
+  process.exit(1);
+} else {
+  const PATH = process.env.PATH;
+  const jetBin = which.sync('jet');
+
+  if (configType === 'launchd') {
+    if (os.platform() !== 'darwin') {
+      logger.erro('Current platform is not OS X. Abort.');
+      process.exit(1);
+    }
+
+    const userAgentPlistFile = path.join(os.homedir(), '/Library/LaunchAgents/org.m31271n.jet.plist');
+    const userAgentPlistContent = `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>org.m31271n.jet</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>PATH</key>
+      <string>${PATH}</string>
+    </dict>
+    <key>ProgramArguments</key>
+    <array>
+      <string>${jetBin}</string>
+      <string>run</string>
+    </array>
+    <key>StandardErrorPath</key>
+    <string>/tmp/jet.log</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/jet.log</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+  </dict>
+</plist>
+`;
+
+    fs.writeFileSync(userAgentPlistFile, userAgentPlistContent);
+
+    logger.info(`Launchd user agent has been written to ${userAgentPlistFile},`);
+    logger.info();
+    logger.info(`    launchctl load ${userAgentPlistFile}`);
+    logger.info();
+    logger.info(`to launch it, and it will be launched automatically everytime you login.`);
+  }
+}

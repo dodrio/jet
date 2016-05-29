@@ -13,6 +13,5 @@ program
   .version(version)
   .description(description)
   .command('run', 'run jet')
-  .command('edit-rule <rule>', 'edit jet rule by $EDITOR')
-  .command('backup-rule <rule>', 'backup jet rule (in development)')
+  .command('config', 'config jet')
   .parse(process.argv);
