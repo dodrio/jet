@@ -34,8 +34,19 @@ Now, Jet just support SOCKS v5 proxy that run at `127.0.0.1:1080`. Shadowsocks i
 ```
 # run jet on 127.0.0.1:9527
 shell> jet run
+
 # run jet on another port, like 9600
 shell> jet run -h 127.0.0.1 -p 9600
+
+# run automatically via launchd on OS X
+shell> jet config -t launchd
+[INFO] Launchd user agent has been written to /Users/m31271n/Library/LaunchAgents/org.m31271n.jet.plist,
+[INFO]
+[INFO]     launchctl load /Users/m31271n/Library/LaunchAgents/org.m31271n.jet.plist
+[INFO]
+[INFO] to launch it, and it will be launched automatically everytime you login.
+# run launchctl according above content
+shell> launchctl load /Users/m31271n/Library/LaunchAgents/org.m31271n.jet.plist
 ```
 
 ## Configure All Your Application To Use Jet.
