@@ -16,7 +16,7 @@
     "which": "1.2.9"
   },
   "scripts": {
-    "start": "jet run",
+    "start": "bin/jet run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "m31271n",
