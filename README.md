@@ -28,7 +28,11 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP C
 ## Jet Need A SOCKS Proxy
 Now, Jet just support SOCKS v5 proxy that run at `127.0.0.1:1080`. Shadowsocks is a good choice.
 
-> If you want the support for SOCKS v4/v4a, contact me, please.
+Change SOCKS Proxy setting via 3 environment variables:
+
+* `JET_SOCKS_IP`
+* `JET_SOCKS_PORT`
+* `JET_SOCKS_TYPE`
 
 ## Run Jet
 ```
