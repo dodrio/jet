@@ -30,7 +30,7 @@ Now, Jet just support SOCKS v5 proxy that run at `127.0.0.1:1080`. Shadowsocks i
 
 Change SOCKS Proxy setting via 3 environment variables:
 
-* `JET_SOCKS_IP`
+* `JET_SOCKS_ADDR`
 * `JET_SOCKS_PORT`
 * `JET_SOCKS_TYPE`
 
