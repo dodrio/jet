@@ -38,21 +38,11 @@ Change SOCKS Proxy setting via 3 environment variables:
 
 ## Run Jet
 ```
-# run jet on 127.0.0.1:9527
+# jet runs on 127.0.0.1:9527 by default
 shell> jet run
 
 # run jet on another port, like 9600
 shell> jet run -h 127.0.0.1 -p 9600
-
-# run automatically via launchd on OS X
-shell> jet config -t launchd
-[INFO] Launchd user agent has been written to /Users/m31271n/Library/LaunchAgents/org.m31271n.jet.plist,
-[INFO]
-[INFO]     launchctl load /Users/m31271n/Library/LaunchAgents/org.m31271n.jet.plist
-[INFO]
-[INFO] to launch it, and it will be launched automatically everytime you login.
-# run launchctl according above content
-shell> launchctl load /Users/m31271n/Library/LaunchAgents/org.m31271n.jet.plist
 ```
 
 ## Configure All Your Application To Use Jet.
@@ -104,7 +94,6 @@ You are not alone, we are all fighting for freedom.
 
 ## Reference
 * [HTTPS connections over proxy servers](http://stackoverflow.com/questions/516323/https-connections-over-proxy-servers)
-* [OS X Launchd](http://launchd.info/)
 
 ## LICENSE
 GPL-3.0
