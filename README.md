@@ -27,14 +27,18 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP C
 
 > I do not share my open source work at NPM, because of [I’ve Just Liberated My Modules](https://medium.com/@azerbike/i-ve-just-liberated-my-modules-9045c06be67c).
 
-## Jet Need A SOCKS Proxy
-Now, Jet just support SOCKS v5 proxy that run at `127.0.0.1:1080`. Shadowsocks is a good choice.
-
+## Setting Appropriate SOCKS Proxy
 Change SOCKS Proxy setting via 3 environment variables:
 
 * `JET_SOCKS_ADDR`
 * `JET_SOCKS_PORT`
 * `JET_SOCKS_TYPE`
+
+By default, Jet needs SOCKS v5 proxy that run at `127.0.0.1:1080`, it means:
+
+* `JET_SOCKS_ADDR=127.0.0.1`
+* `JET_SOCKS_PORT=1080`
+* `JET_SOCKS_TYPE=5`
 
 ## Run Jet
 ```
@@ -72,7 +76,9 @@ unset PROXY_ENV
 unset NO_PROXY_ENV
 ```
 
-Add above script to your shell init file, like `~/.bashrc` or `~/.zshrc`. Then `source` it.
+Add above script to your shell init file, like `~/.bashrc`. Then `source` it.
+
+> If you are using other shell, set above environment variables by yourself.
 
 ## Test The Effects
 ### Test Jet is Working Or Not
