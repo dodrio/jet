@@ -1,4 +1,11 @@
 # Jet
+
+An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.
+
+> The name "Jet" is inspired by Jet Black from Cowboy Bepop.
+
+> Inspierd by http://www.catonmat.net/http-proxy-in-nodejs/
+
 <!-- start: markdown-toc -->
 
 - [Jet](#jet)
@@ -19,12 +26,6 @@
     - [LICENSE](#license)
 
 <!-- end: markdown-toc -->
-
-An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.
-
-> The name "Jet" is inspired by Jet Black from Cowboy Bepop.
-
-> Inspierd by http://www.catonmat.net/http-proxy-in-nodejs/
 
 ## What does Jet do?
 ```
