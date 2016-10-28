@@ -1,4 +1,25 @@
 # Jet
+<!-- start: markdown-toc -->
+
+- [Jet](#jet)
+    - [What does Jet do?](#what-does-jet-do)
+    - [Requirements](#requirements)
+    - [Installation](#installation)
+    - [Setting Appropriate SOCKS Proxy](#setting-appropriate-socks-proxy)
+    - [Setting DNS Server](#setting-dns-server)
+    - [Run Jet](#run-jet)
+    - [Configure All Your Application To Use Jet.](#configure-all-your-application-to-use-jet)
+        - [For GUI](#for-gui)
+        - [For CLI](#for-cli)
+    - [Test The Effects](#test-the-effects)
+        - [Test Jet is Working Or Not](#test-jet-is-working-or-not)
+        - [Test Your Shell Environment Is Set Properly Or Not](#test-your-shell-environment-is-set-properly-or-not)
+    - [Last](#last)
+    - [Reference](#reference)
+    - [LICENSE](#license)
+
+<!-- end: markdown-toc -->
+
 An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.
 
 > The name "Jet" is inspired by Jet Black from Cowboy Bepop.
@@ -52,6 +73,7 @@ Set it as following:
 * `JET_DNS_SERVERS=127.0.0.1,8.8.8.8`
 
 > Limitation：Node's `dns.setServers()` can't specified port, so you must ensure your DNS server is listening on port `53`.
+
 ## Run Jet
 ```
 # jet runs on 127.0.0.1:9527 by default
