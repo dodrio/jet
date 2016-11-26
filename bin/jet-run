@@ -1,40 +1,33 @@
 #!/usr/bin/env node
 
-'use strict';
+const process = require('process')
+const program = require('commander')
 
-const process = require('process');
-const program = require('commander');
+const jet = require('../lib/jet')
+const logger = require('../lib/logger')
 
-const logger = require('../lib/logger');
-
-
-const defaultHost = '0.0.0.0';
-const defaultPort = 9527;
-
+const defaultHost = '0.0.0.0'
+const defaultPort = 9527
 
 program
   .option('-h, --host <host>', `host address, default value: ${defaultHost}`)
   .option('-p, --port <port>', `port number, default value: ${defaultPort}`, parseInt)
-  .parse(process.argv);
+  .parse(process.argv)
 
+logger.info(`Current Version: ${require('../package.json').version}`)
 
-logger.info(`Current Version: ${require('../package.json').version}`);
-
-const jet = require('../lib/jet');
-const host = program.host || defaultHost;
-const port = program.port || defaultPort;
-
+const host = program.host || defaultHost
+const port = program.port || defaultPort
 
 jet.listen(port, host, () => {
-  logger.info(`Listening on ${host}:${port}...`);
-});
-
+  logger.info(`Listening on ${host}:${port}...`)
+})
 
 jet.on('error', (e) => {
   if (e.code === 'EADDRINUSE') {
-    logger.erro(`Address ${host}:${port} is in use, abort.`);
+    logger.erro(`Address ${host}:${port} is in use, abort.`)
     // const jet = require('../lib/jet') will run a process to check configuration file,
     // It need to be exit manually.
-    process.exit(1);
+    process.exit(1)
   }
-});
+})

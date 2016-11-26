@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 
-'use strict';
+const pkgInfo = require('../package.json')
+const version = pkgInfo.version
+const description = pkgInfo.description
 
-const pkgInfo = require('../package.json');
-const version = pkgInfo.version;
-const description = pkgInfo.description;
-
-const process = require('process');
-const program = require('commander');
+const process = require('process')
+const program = require('commander')
 
 program
   .version(version)
   .description(description)
   .command('run', 'run jet')
   .command('config', 'config jet')
-  .parse(process.argv);
+  .parse(process.argv)
