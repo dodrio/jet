@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+const program = require('commander')
+const config = require('../config')
+const download = require('../utils/download.js')
+const logger = require('../utils/logger')
+
+program.parse(process.argv)
+
+const {
+  rulesIPSrc,
+  rulesIP
+} = config
+
+logger.info(`${rulesIP} updating...`)
+download(rulesIPSrc, rulesIP)

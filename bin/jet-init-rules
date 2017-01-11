@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const program = require('commander')
+const config = require('../config')
+const logger = require('../utils/logger')
+const download = require('../utils/download')
+
+program.parse(process.argv)
+
+const {
+  rulesIPSrc,
+  rulesIP
+} = config
+
+fs.stat(rulesIP, (err, stat) => {
+  if (err) {
+    if (err.code === 'ENOENT') {
+      logger.info(`${rulesIP} doesn't exist, downloading...`)
+      download(rulesIPSrc, rulesIP)
+    } else {
+      logger.erro(err.message)
+    }
+  } else {
+    if (stat.isFile()) {
+      logger.info(`${rulesIP} already exists, skipping... `)
+    } else {
+      logger.erro(`${rulesIP} is not a regular file, please remove it, then download again.`)
+    }
+  }
+})

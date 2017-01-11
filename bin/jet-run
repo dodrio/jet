@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-const process = require('process')
 const program = require('commander')
-
 const jet = require('../lib/jet')
-const logger = require('../lib/logger')
+const logger = require('../utils/logger')
 
 const defaultHost = '0.0.0.0'
 const defaultPort = 9527
@@ -14,8 +12,6 @@ program
   .option('-p, --port <port>', `port number, default value: ${defaultPort}`, parseInt)
   .parse(process.argv)
 
-logger.info(`Current Version: ${require('../package.json').version}`)
-
 const host = program.host || defaultHost
 const port = program.port || defaultPort
 
@@ -23,11 +19,9 @@ jet.listen(port, host, () => {
   logger.info(`Listening on ${host}:${port}...`)
 })
 
-jet.on('error', (e) => {
-  if (e.code === 'EADDRINUSE') {
+jet.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
     logger.erro(`Address ${host}:${port} is in use, abort.`)
-    // const jet = require('../lib/jet') will run a process to check configuration file,
-    // It need to be exit manually.
     process.exit(1)
   }
 })

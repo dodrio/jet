@@ -1,15 +1,12 @@
 #!/usr/bin/env node
 
-const pkgInfo = require('../package.json')
-const version = pkgInfo.version
-const description = pkgInfo.description
-
-const process = require('process')
 const program = require('commander')
+const { version, description } = require('../package.json')
 
 program
   .version(version)
   .description(description)
+  .command('init-rules', 'init rules')
+  .command('update-rules', 'update rules')
   .command('run', 'run jet')
-  .command('config', 'config jet')
   .parse(process.argv)

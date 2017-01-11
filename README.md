@@ -77,11 +77,17 @@ Set it as following:
 
 ## Run Jet
 ```
+# initialize rules
+shell> jet init-rules
+
 # jet runs on 127.0.0.1:9527 by default
 shell> jet run
 
 # run jet on another port, like 9600
 shell> jet run -h 127.0.0.1 -p 9600
+
+# update rules
+shell> jet update-rules
 ```
 
 ## Configure All Your Application To Use Jet.
