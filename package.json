@@ -16,7 +16,7 @@
     "socks": "1.1.9"
   },
   "scripts": {
-    "start": "bin/jet run",
+    "start": "bin/jet init-rules && bin/jet run",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard"
   },
