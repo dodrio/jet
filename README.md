@@ -62,19 +62,6 @@ By default, Jet needs SOCKS v5 proxy that run at `127.0.0.1:1080`, it means:
 * `JET_SOCKS_PORT=1080`
 * `JET_SOCKS_TYPE=5`
 
-## Setting DNS Server
-By default, Jet uses the DNS server which system is using.
-
-Change DNS Server via 1 environment variables:
-
-* `JET_DNS_SERVERS`
-
-Set it as following:
-
-* `JET_DNS_SERVERS=127.0.0.1,8.8.8.8`
-
-> Limitation：Node's `dns.setServers()` can't specified port, so you must ensure your DNS server is listening on port `53`.
-
 ## Run Jet
 ```
 # initialize rules

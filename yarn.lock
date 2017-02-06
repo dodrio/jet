@@ -156,7 +156,7 @@ debug-log@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/debug-log/download/debug-log-1.0.1.tgz#2307632d4c04382b8df8a32f70b895046d52745f"
 
-debug@^2.1.1, debug@^2.2.0:
+debug@^2.1.1:
   version "2.4.1"
   resolved "http://registry.npm.taobao.org/debug/download/debug-2.4.1.tgz#ef2532d2753d282045c13c82ce47a09e56b91d53"
   dependencies:

@@ -2,24 +2,15 @@
 
 require('colors')
 
-function request (req, type) {
-  if (type === 'tunnel') {
-    console.log(`> ${req.connection.remoteAddress} TUNNEL ${req._url.href}`.yellow)
-  } else if (type === 'direct') {
-    console.log(`> ${req.connection.remoteAddress} DIRECT ${req._url.href}`.green)
-  }
-}
-
 function info (log = '') {
-  console.log(`[INFO] ${log}`.cyan)
+  console.log(`[INFO] ${log}`.blue)
 }
 
 function erro (log = '') {
-  console.log(`[ERRO] ${log}`.yellow)
+  console.log(`[ERRO] ${log}`.red)
 }
 
 module.exports = {
-  request,
   info,
   erro
 }

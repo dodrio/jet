@@ -1,4 +1,5 @@
-#!/usr/bin/env node
+#!/bin/sh
+":" // a shebang hack; exec /usr/bin/env node --harmony-async-await "$0" "$@"
 
 const program = require('commander')
 const { version, description } = require('../package.json')

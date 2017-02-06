@@ -1,10 +1,12 @@
-#!/usr/bin/env node
+#!/bin/sh
+":" // a shebang hack; exec /usr/bin/env node --harmony-async-await "$0" "$@"
 
 const program = require('commander')
+const dns = require('dns')
 const jet = require('../lib/jet')
 const logger = require('../utils/logger')
 
-const defaultHost = '0.0.0.0'
+const defaultHost = '127.0.0.1'
 const defaultPort = 9527
 
 program
@@ -16,7 +18,8 @@ const host = program.host || defaultHost
 const port = program.port || defaultPort
 
 jet.listen(port, host, () => {
-  logger.info(`Listening on ${host}:${port}...`)
+  logger.info(`DNS: ${dns.getServers()}`)
+  logger.info(`Listening on ${host}:${port}.`)
 })
 
 jet.on('error', (err) => {
