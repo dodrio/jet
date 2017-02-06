@@ -50,16 +50,22 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP C
 > I do not share my open source work at NPM, because of [I’ve Just Liberated My Modules](https://medium.com/@azerbike/i-ve-just-liberated-my-modules-9045c06be67c).
 
 ## Setting Jet via environment variables
+Format instruction:
+
+```
+VAR - DEFAULT VALUE
+```
+
 Change SOCKS Proxy setting via 3 environment variables:
 
-* `JET_SOCKS_ADDR`: 127.0.0.1
-* `JET_SOCKS_PORT`: 1080
-* `JET_SOCKS_TYPE`: 5
+* `JET_SOCKS_ADDR` - `127.0.0.1`
+* `JET_SOCKS_PORT` - `1080`
+* `JET_SOCKS_TYPE` - `5`
 
 Change setting of listening:
 
-* `JET_LISTEN_ADDR`: 127.0.0.1
-* `JET_LISTEN_PORT`: 9527
+* `JET_LISTEN_ADDR` - `127.0.0.1`
+* `JET_LISTEN_PORT` - `9527`
 
 ## Running Jet
 ```
