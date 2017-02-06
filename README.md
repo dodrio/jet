@@ -8,13 +8,13 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP C
 
 <!-- start: markdown-toc -->
 
+
 - [Jet](#jet)
     - [What does Jet do?](#what-does-jet-do)
     - [Requirements](#requirements)
     - [Installation](#installation)
-    - [Setting Appropriate SOCKS Proxy](#setting-appropriate-socks-proxy)
-    - [Setting DNS Server](#setting-dns-server)
-    - [Run Jet](#run-jet)
+    - [Setting Jet via environment variables](#setting-jet-via-environment-variables)
+    - [Running Jet](#running-jet)
     - [Configure All Your Application To Use Jet.](#configure-all-your-application-to-use-jet)
         - [For GUI](#for-gui)
         - [For CLI](#for-cli)
@@ -41,7 +41,7 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP C
 
 ## Requirements
 
-* Node.js > 6.0.0
+* Node.js >= 7.4.0
 
 ## Installation
 
@@ -49,20 +49,19 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP C
 
 > I do not share my open source work at NPM, because of [I’ve Just Liberated My Modules](https://medium.com/@azerbike/i-ve-just-liberated-my-modules-9045c06be67c).
 
-## Setting Appropriate SOCKS Proxy
+## Setting Jet via environment variables
 Change SOCKS Proxy setting via 3 environment variables:
 
-* `JET_SOCKS_ADDR`
-* `JET_SOCKS_PORT`
-* `JET_SOCKS_TYPE`
+* `JET_SOCKS_ADDR`: 127.0.0.1
+* `JET_SOCKS_PORT`: 1080
+* `JET_SOCKS_TYPE`: 5
 
-By default, Jet needs SOCKS v5 proxy that run at `127.0.0.1:1080`, it means:
+Change setting of listening:
 
-* `JET_SOCKS_ADDR=127.0.0.1`
-* `JET_SOCKS_PORT=1080`
-* `JET_SOCKS_TYPE=5`
+* `JET_LISTEN_ADDR`: 127.0.0.1
+* `JET_LISTEN_PORT`: 9527
 
-## Run Jet
+## Running Jet
 ```
 # initialize rules
 shell> jet init-rules
@@ -71,7 +70,7 @@ shell> jet init-rules
 shell> jet run
 
 # run jet on another port, like 9600
-shell> jet run -h 127.0.0.1 -p 9600
+shell> JET_LISTEN_PORT=9600 jet run
 
 # update rules
 shell> jet update-rules

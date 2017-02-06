@@ -5,17 +5,12 @@ const program = require('commander')
 const dns = require('dns')
 const jet = require('../lib/jet')
 const logger = require('../utils/logger')
+const config = require('../config')
 
-const defaultHost = '127.0.0.1'
-const defaultPort = 9527
+program.parse(process.argv)
 
-program
-  .option('-h, --host <host>', `host address, default value: ${defaultHost}`)
-  .option('-p, --port <port>', `port number, default value: ${defaultPort}`, parseInt)
-  .parse(process.argv)
-
-const host = program.host || defaultHost
-const port = program.port || defaultPort
+const host = config.listen.addr
+const port = config.listen.port
 
 jet.listen(port, host, () => {
   logger.info(`DNS: ${dns.getServers()}`)
