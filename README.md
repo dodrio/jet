@@ -69,8 +69,8 @@ Change setting of listening:
 
 ## Running Jet
 ```
-# initialize rules
-shell> jet init-rules
+# sync GeoIP info
+shell> jet sync-geoip
 
 # jet runs on 127.0.0.1:9527 by default
 shell> jet run
@@ -78,8 +78,9 @@ shell> jet run
 # run jet on another port, like 9600
 shell> JET_LISTEN_PORT=9600 jet run
 
-# update rules
-shell> jet update-rules
+# after a period of time, you maybe want to update GeoIP info,
+# just sync it again
+shell> jet sync-geoip
 ```
 
 ## Configure All Your Application To Use Jet.

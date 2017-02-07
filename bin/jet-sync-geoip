@@ -7,10 +7,7 @@ const logger = require('../utils/logger')
 
 program.parse(process.argv)
 
-const {
-  rulesIPSrc,
-  rulesIP
-} = config
+const { src, dest } = config.geoip
 
-logger.info(`${rulesIP} updating...`)
-download(rulesIPSrc, rulesIP)
+logger.info('syncing GeoIP...')
+download(src, dest)
