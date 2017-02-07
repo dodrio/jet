@@ -7,6 +7,7 @@ const jet = require('../lib/jet')
 const logger = require('../utils/logger')
 const config = require('../config')
 
+process.title = require('../package.json').name
 program.parse(process.argv)
 
 const host = config.listen.addr

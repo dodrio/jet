@@ -4,6 +4,7 @@
 const program = require('commander')
 const { version, description } = require('../package.json')
 
+process.title = require('../package.json').name
 program
   .version(version)
   .description(description)
