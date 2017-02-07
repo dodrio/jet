@@ -2,7 +2,6 @@
   "name": "jet",
   "version": "4.1.0",
   "description": "An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.",
-  "main": "lib/jet",
   "bin": {
     "jet": "bin/jet"
   },
@@ -16,7 +15,7 @@
     "socks": "1.1.9"
   },
   "scripts": {
-    "start": "bin/jet init-rules && bin/jet run",
+    "start": "bin/jet sync-geoip && bin/jet run",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard"
   },
