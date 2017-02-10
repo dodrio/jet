@@ -1,18 +1,27 @@
-# Jet
+<h1 align="center">jet</h1>
+<br>
 
-An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.
+<h4 align="center">An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.</h4>
+
+<p align="center">
+<a href="http://standardjs.com/"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="Standard - JavaScript Style Guide"></a>
+<a href="http://m31271n.com/"><img src="https://img.shields.io/badge/made%20by-m31271n-brightgreen.svg?style=flat" alt="Made by m31271n"></a>
+</p>
+<br>
 
 > The name "Jet" is inspired by Jet Black from Cowboy Bepop.
 
 <!-- start: markdown-toc -->
 
-
-- [Jet](#jet)
-    - [What does Jet do?](#what-does-jet-do)
-    - [Requirements](#requirements)
-    - [Installation](#installation)
-    - [Setting Jet via environment variables](#setting-jet-via-environment-variables)
-    - [Running Jet](#running-jet)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Setting Jet via environment variables](#setting-jet-via-environment-variables)
+- [Running Jet](#running-jet)
+- [sync GeoIP info](#sync-geoip-info)
+- [jet runs on 127.0.0.1:9527 by default](#jet-runs-on-1270019527-by-default)
+- [run jet on another port, like 9600](#run-jet-on-another-port-like-9600)
+- [after a period of time, you maybe want to update GeoIP info,](#after-a-period-of-time-you-maybe-want-to-update-geoip-info)
+- [just sync it again](#just-sync-it-again)
     - [Configure All Your Application To Use Jet.](#configure-all-your-application-to-use-jet)
         - [For GUI](#for-gui)
         - [For CLI](#for-cli)
@@ -39,7 +48,7 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP C
 
 ## Requirements
 
-* Node.js >= 7.4.0
+* Node.js >= 7
 
 ## Installation
 
