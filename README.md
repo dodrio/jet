@@ -9,26 +9,23 @@
 </p>
 <br>
 
-> The name "Jet" is inspired by Jet Black from Cowboy Bepop.
+> The name "jet" is inspired by Jet Black from Cowboy Bepop.
 
+# Index
 <!-- start: markdown-toc -->
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Setting Jet via environment variables](#setting-jet-via-environment-variables)
-- [Running Jet](#running-jet)
-- [sync GeoIP info](#sync-geoip-info)
-- [jet runs on 127.0.0.1:9527 by default](#jet-runs-on-1270019527-by-default)
-- [run jet on another port, like 9600](#run-jet-on-another-port-like-9600)
-- [after a period of time, you maybe want to update GeoIP info,](#after-a-period-of-time-you-maybe-want-to-update-geoip-info)
-- [just sync it again](#just-sync-it-again)
+- [Index](#index)
+    - [What does Jet do?](#what-does-jet-do)
+    - [Requirements](#requirements)
+    - [Installation](#installation)
+    - [Setting Jet via environment variables](#setting-jet-via-environment-variables)
+    - [Running Jet](#running-jet)
     - [Configure All Your Application To Use Jet.](#configure-all-your-application-to-use-jet)
         - [For GUI](#for-gui)
         - [For CLI](#for-cli)
     - [Test The Effects](#test-the-effects)
         - [Test Jet is Working Or Not](#test-jet-is-working-or-not)
         - [Test Your Shell Environment Is Set Properly Or Not](#test-your-shell-environment-is-set-properly-or-not)
-    - [Last](#last)
     - [Reference](#reference)
     - [LICENSE](#license)
 
@@ -135,9 +132,6 @@ shell> curl https://www.google.com/
 ```
 
 If you get right content, then jet is working. And your shell environment is set properly, too.
-
-## Last
-You are not alone, we are all fighting for freedom.
 
 ## Reference
 * [HTTPS connections over proxy servers](http://stackoverflow.com/questions/516323/https-connections-over-proxy-servers)
