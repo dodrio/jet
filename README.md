@@ -4,8 +4,6 @@ An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP C
 
 > The name "Jet" is inspired by Jet Black from Cowboy Bepop.
 
-> Inspierd by http://www.catonmat.net/http-proxy-in-nodejs/
-
 <!-- start: markdown-toc -->
 
 
@@ -134,6 +132,6 @@ You are not alone, we are all fighting for freedom.
 
 ## Reference
 * [HTTPS connections over proxy servers](http://stackoverflow.com/questions/516323/https-connections-over-proxy-servers)
-
+* [HTTP Proxy in Node.js](http://www.catonmat.net/http-proxy-in-nodejs/)
 ## LICENSE
 GPL-3.0
