@@ -14,6 +14,7 @@
 # Index
 <!-- start: markdown-toc -->
 
+
 - [Index](#index)
     - [What does Jet do?](#what-does-jet-do)
     - [Requirements](#requirements)
@@ -26,6 +27,8 @@
     - [Test The Effects](#test-the-effects)
         - [Test Jet is Working Or Not](#test-jet-is-working-or-not)
         - [Test Your Shell Environment Is Set Properly Or Not](#test-your-shell-environment-is-set-properly-or-not)
+    - [Advanced Features](#advanced-features)
+        - [Hot switching mode](#hot-switching-mode)
     - [Reference](#reference)
     - [LICENSE](#license)
 
@@ -132,6 +135,37 @@ shell> curl https://www.google.com/
 ```
 
 If you get right content, then jet is working. And your shell environment is set properly, too.
+
+## Advanced Features
+### Hot switching mode
+By defaut, jet is running in **auto** mode (a mode that routes request according GeoIP). In addition to this mode, there are two other mode:
++ **direct** - request directly, globally
++ **tunnel** - request through SOCKS proxy globally
+
+When you run jet in terminal, you'll get this:
+
+```
+[INFO] Reading GeoIP info.
+[INFO] DNS: 127.0.0.1
+[INFO] Listening on 127.0.0.1:9527.
+> TUNNEL 127.0.0.1 -> https://live.github.com:443/
+> TUNNEL 127.0.0.1 -> https://live.github.com:443/
+```
+
+In order to hot switch current mode, just type supported mode directly. Take direct mode as an example:
+
+```
+[INFO] Reading GeoIP info.
+[INFO] DNS: 127.0.0.1
+[INFO] Listening on 127.0.0.1:9527.
+> TUNNEL 127.0.0.1 -> https://live.github.com:443/
+> TUNNEL 127.0.0.1 -> https://live.github.com:443/
+direct
+[INFO] Switch to direct mode
+> DIRECT 127.0.0.1 -> https://live.github.com:443/
+```
+
+That's it
 
 ## Reference
 * [HTTPS connections over proxy servers](http://stackoverflow.com/questions/516323/https-connections-over-proxy-servers)
