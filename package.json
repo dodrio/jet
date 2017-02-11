@@ -1,6 +1,6 @@
 {
   "name": "jet",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.",
   "bin": {
     "jet": "bin/jet"
