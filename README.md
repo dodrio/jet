@@ -29,6 +29,7 @@
         - [Test Your Shell Environment Is Set Properly Or Not](#test-your-shell-environment-is-set-properly-or-not)
     - [Advanced Features](#advanced-features)
         - [Hot switching mode](#hot-switching-mode)
+    - [Uninstallation](#uninstallation)
     - [Reference](#reference)
     - [LICENSE](#license)
 
@@ -152,7 +153,7 @@ When you run jet in terminal, you'll get this:
 > TUNNEL 127.0.0.1 -> https://live.github.com:443/
 ```
 
-In order to hot switch current mode, just type supported mode directly. Take direct mode as an example:
+In order to hot switch current mode, just type supported mode directly. Take **direct** mode as an example:
 
 ```
 [INFO] Reading GeoIP info.
@@ -160,12 +161,21 @@ In order to hot switch current mode, just type supported mode directly. Take dir
 [INFO] Listening on 127.0.0.1:9527.
 > TUNNEL 127.0.0.1 -> https://live.github.com:443/
 > TUNNEL 127.0.0.1 -> https://live.github.com:443/
-direct
+direct  <- the mode you type
 [INFO] Switch to direct mode
 > DIRECT 127.0.0.1 -> https://live.github.com:443/
 ```
 
-That's it
+## Uninstallation
+If you think jet is not suitable for you, remove it with following commands:
+
+```
+# remove npm package
+shell> npm uninstall -g jet
+
+# remove related directory
+shell> rm -rf ~/.config/jet
+```
 
 ## Reference
 * [HTTPS connections over proxy servers](http://stackoverflow.com/questions/516323/https-connections-over-proxy-servers)
