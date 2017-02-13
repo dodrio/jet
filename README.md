@@ -1,6 +1,6 @@
 <h1 align="center">jet</h1>
 
-<p align="center">An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.</p>
+<p align="center">An HTTP pre-proxy for SOCKS.</p>
 
 <p align="center">
   <a href="http://standardjs.com/" target="_blank"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="Standard - JavaScript Style Guide"></a>
@@ -46,9 +46,16 @@
      └──────────────────┘     └───┘                            └────────┘
 ```
 
+## Features
+
++ support SOCKS v4/v4a/v5
++ support DNS cache
++ route requests via GeoIP CN
++ 3 proxy mode: auto / direct / tunnel
+
 ## Requirements
 
-* Node.js >= 7
++ Node.js >= 7
 
 ## Installation
 

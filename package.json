@@ -1,13 +1,14 @@
 {
   "name": "jet",
   "version": "4.2.0",
-  "description": "An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.",
+  "description": "An HTTP pre-proxy for SOCKS.",
   "bin": {
     "jet": "bin/jet"
   },
   "dependencies": {
     "colors": "1.1.2",
     "commander": "^2.9.0",
+    "dnscache": "^1.0.1",
     "ip": "^1.1.3",
     "mkdirp": "^0.5.1",
     "progress": "^1.1.8",
