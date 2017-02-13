@@ -16,6 +16,7 @@
 
 - [Index](#index)
     - [What does Jet do?](#what-does-jet-do)
+    - [Features](#features)
     - [Requirements](#requirements)
     - [Installation](#installation)
     - [Setting Jet via environment variables](#setting-jet-via-environment-variables)
@@ -50,8 +51,8 @@
 
 + support SOCKS v4/v4a/v5
 + support DNS cache
-+ route requests via GeoIP CN
-+ 3 proxy mode: auto / direct / tunnel
++ route requests via GeoIP CN automatically
++ hot switching between auto / direct / tunnel mode
 
 ## Requirements
 
