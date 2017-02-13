@@ -30,6 +30,7 @@
         - [Hot switching mode](#hot-switching-mode)
     - [Uninstallation](#uninstallation)
     - [Reference](#reference)
+    - [Similar Tools](#similar-tools)
 
 <!-- end: markdown-toc -->
 
@@ -176,5 +177,9 @@ shell> rm -rf ~/.config/jet
 ```
 
 ## Reference
-* [HTTPS connections over proxy servers](http://stackoverflow.com/questions/516323/https-connections-over-proxy-servers)
-* [HTTP Proxy in Node.js](http://www.catonmat.net/http-proxy-in-nodejs/)
++ [HTTPS connections over proxy servers](http://stackoverflow.com/questions/516323/https-connections-over-proxy-servers)
++ [HTTP Proxy in Node.js](http://www.catonmat.net/http-proxy-in-nodejs/)
+
+## Similar Tools
++ [oyyd/http-proxy-to-socks](https://github.com/oyyd/http-proxy-to-socks)
++ [bitinn/kneesocks](https://github.com/bitinn/kneesocks)
