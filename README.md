@@ -1,13 +1,12 @@
 <h1 align="center">jet</h1>
-<br>
 
-<h4 align="center">An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.</h4>
+<p align="center">An HTTP/HTTPS proxy integrated with SOCKS v4/v4a/v5, routes requests via GeoIP CN.</p>
 
 <p align="center">
-<a href="http://standardjs.com/"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="Standard - JavaScript Style Guide"></a>
-<a href="http://m31271n.com/"><img src="https://img.shields.io/badge/made%20by-m31271n-brightgreen.svg?style=flat" alt="Made by m31271n"></a>
+  <a href="http://standardjs.com/" target="_blank"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="Standard - JavaScript Style Guide"></a>
+  <a href="http://m31271n.com/" target="_blank"><img src="https://img.shields.io/badge/made%20by-m31271n-brightgreen.svg?style=flat" alt="Made by m31271n"></a>
+  <img src="https://img.shields.io/badge/license-GPL--3.0-brightgreen.svg?style=flat" alt="License - GPL-3.0">
 </p>
-<br>
 
 > The name "jet" is inspired by Jet Black from Cowboy Bepop.
 
