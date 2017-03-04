@@ -2,12 +2,13 @@
 ":" // a shebang hack; exec /usr/bin/env node --harmony-async-await "$0" "$@"
 
 const program = require('commander')
+const path = require('path')
 const dns = require('dns')
 const jet = require('../lib/jet')
 const logger = require('../utils/logger')
 const config = require('../config')
 
-process.title = require('../package.json').name
+process.title = path.basename(__filename)
 program.parse(process.argv)
 
 const host = config.listen.addr

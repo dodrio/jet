@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 const program = require('commander')
+const path = require('path')
 const config = require('../config')
 const download = require('../utils/download.js')
 const logger = require('../utils/logger')
 
-process.title = require('../package.json').name
+process.title = path.basename(__filename)
 program.parse(process.argv)
 
 const { src, dest } = config.geoip
