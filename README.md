@@ -56,7 +56,7 @@
 
 ## Requirements
 
-+ Node.js >= 7
++ Node.js >= 8.0.0
 
 ## Installation
 
