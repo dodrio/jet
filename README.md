@@ -60,9 +60,7 @@
 
 ## Installation
 
-    npm install -g m31271n/jet
-
-> I do not share my open source work at NPM, because of [I’ve Just Liberated My Modules](https://medium.com/@azerbike/i-ve-just-liberated-my-modules-9045c06be67c).
+    npm install -g @2players/jet
 
 ## Setting Jet via environment variables
 Format instruction:

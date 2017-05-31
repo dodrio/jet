@@ -1,10 +1,17 @@
 {
-  "name": "jet",
+  "name": "@2players/jet",
   "version": "4.3.3",
   "description": "An HTTP pre-proxy for SOCKS.",
   "bin": {
     "jet": "bin/jet"
   },
+  "files": [
+    "bin/",
+    "lib/",
+    "config.js",
+    "utils/",
+    "README.md"
+  ],
   "dependencies": {
     "colors": "1.1.2",
     "commander": "^2.9.0",
