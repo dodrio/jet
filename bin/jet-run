@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const throng = require('throng')
 const program = require('commander')
 const path = require('path')
 const dns = require('dns')
@@ -13,14 +14,15 @@ program.parse(process.argv)
 const host = config.listen.addr
 const port = config.listen.port
 
-jet.listen(port, host, () => {
-  logger.info(`DNS: ${dns.getServers()}`)
-  logger.info(`Listening on ${host}:${port}.`)
-})
+throng((id) => {
+  jet.listen(port, host, () => {
+    logger.info(`worker ${id} listening on ${host}:${port}.`)
+  })
 
-jet.on('error', (err) => {
-  if (err.code === 'EADDRINUSE') {
-    logger.erro(`Address ${host}:${port} is in use, abort.`)
-    process.exit(1)
-  }
+  jet.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      logger.erro(`Address ${host}:${port} is in use, abort.`)
+      process.exit(1)
+    }
+  })
 })
