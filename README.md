@@ -62,7 +62,7 @@
 
 ## Installation
 
-    npm install -g @2players/jet
+    npm install -g @2players/jet@4.3.4
 
 ## Setting Jet via environment variables
 Format instruction:
