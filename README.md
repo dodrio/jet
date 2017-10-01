@@ -1,5 +1,7 @@
 <h1 align="center">jet</h1>
 
+**NOTE: Cluster support in 4.4.0 is not good enough for daily use. So please use 4.3.4. I have no time to improve it. PR is welcome to improve cluster support.**
+
 <p align="center">An HTTP pre-proxy for SOCKS.</p>
 
 <p align="center">
